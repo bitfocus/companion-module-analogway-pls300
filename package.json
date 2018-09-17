@@ -1,0 +1,11 @@
+{
+  "name": "pulse300",
+  "version": "1.0.0",
+  "description": "Analog Way Pulse 300 plugin for Companion",
+  "main": "pulse300",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tyler Krupa",
+  "license": "MIT"
+}
