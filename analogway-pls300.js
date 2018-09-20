@@ -560,29 +560,62 @@ instance.prototype.actions = function(system) {
 	var self = this;
 
 	self.system.emit('instance_actions', self.id, {
-		'take':    { label: 'Take' },
-		'in0':     { label: 'No Input' },
-		'in1':     { label: 'Input 1' },
-		'in2':     { label: 'Input 2' },
-		'in3':     { label: 'Input 3' },
-		'in4':     { label: 'Input 4' },
-		'in5':     { label: 'Input 5' },
-		'in6':     { label: 'Input 6' },
-		'in7':     { label: 'DVI 1' },
-		'in8':     { label: 'DVI 2' },
-		'in9':     { label: 'SDI 1' },
-		'in10':    { label: 'SDI 2' },
-		'fr0':     { label: 'No Frame' },
-		'fr1':     { label: 'Frame 1' },
-		'fr2':     { label: 'Frame 2' },
-		'fr3':     { label: 'Frame 3' },
-		'fr4':     { label: 'Frame 4' },
-		'fr5':     { label: 'Frame 5' },
-		'fr6':     { label: 'Frame 6' },
-		'ps1':     { label: 'Preset 1' },
-		'ps2':     { label: 'Preset 2' },
-		'ps3':     { label: 'Preset 3' },
-		'ps4':     { label: 'Preset 4' },
+		'take':    { 
+			label: 'Take' 
+		 },
+		'in':      { 
+			label: 'Input' 
+			options: [{
+				type:   'dropdown',
+				label:  'Input',
+				id:     'input',
+				default: '0',
+				choices: [
+					{ id: '0', label: 'No Input' },
+					{ id: '1', label: 'Input 1' },
+					{ id: '2', label: 'Input 2' },
+					{ id: '3', label: 'Input 3' },
+					{ id: '4', label: 'Input 4' },
+					{ id: '5', label: 'Input 5' },
+					{ id: '6', label: 'Input 6' },
+					{ id: '9', label: 'DVI 1' },
+					{ id: '10', label: 'DVI 2' },
+					{ id: '11', label: 'SDI 1' },
+					{ id: '12', label: 'SDI 2' },
+				}]},
+		'fr':      { 
+			label: 'Background Frame' 
+			options: [{
+				type:   'dropdown',
+				label:  'Frame',
+				id:     'frame',
+				default: '0',
+				choices: [
+					{ id: '0', label: 'No Frame' },
+					{ id: '1', label: 'Frame 1' },
+					{ id: '2', label: 'Frame 2' },
+					{ id: '3', label: 'Frame 3' },
+					{ id: '4', label: 'Frame 4' },
+					{ id: '5', label: 'Frame 5' },
+					{ id: '6', label: 'Frame 6' },
+
+				}]},
+		'ps':      { 
+			label: 'Preset' 
+			options: [{
+				type:   'dropdown',
+				label:  'Preset',
+				id:     'preset',
+				default: '0',
+				choices: [
+
+					{ id: '3', label: 'Preset 1' },
+					{ id: '4', label: 'Preset 2' },
+					{ id: '5', label: 'Preset 3' },
+					{ id: '6', label: 'Preset 4' },
+
+				}]},
+
 		
 	});
 };
@@ -597,78 +630,20 @@ instance.prototype.action = function(action) {
 		case 'take':
 			cmd = 'TK1';
 			break;
-		case 'in0':
-			cmd = '1,2,0IN';
+
+		case 'in':
+			cmd = '1,2,' + action.options.input + 'IN';
 			break;
-		case 'in1':
-			cmd = '1,2,1IN';
+
+		case 'fr':
+			cmd = '1,0,' + action.options.frame + 'IN';
 			break;
-		case 'in2':
-			cmd = '1,2,2IN';
-			break;
-		case 'in3':
-			cmd = '1,2,3IN';
-			break;
-		case 'in4':
-			cmd = '1,2,4IN';
-			break;
-		case 'in5':
-			cmd = '1,2,5IN';
-			break;
-		case 'in6':
-			cmd = '1,2,6IN';
-			break;
-		case 'in7':
-			cmd = '1,2,9IN';
-			break;
-		case 'in8':
-			cmd = '1,2,10IN';
-			break;
-		case 'in9':
-			cmd = '1,2,11IN';
-			break;
-		case 'in10':
-			cmd = '1,2,12IN';
-			break;
-		case 'fr0':
-			cmd = '1,0,0IN';
-			break;
-		case 'fr1':
-			cmd = '1,0,1IN';
-			break;
-		case 'fr2':
-			cmd = '1,0,2IN';
-			break;
-		case 'fr3':
-			cmd = '1,0,3IN';
-			break;
-		case 'fr4':
-			cmd = '1,0,4IN';
-			break;
-		case 'fr5':
-			cmd = '1,0,5IN';
-			break;
-		case 'fr6':
-			cmd = '1,0,6IN';
-			break;
-		case 'ps1':
-			cmd = '3Nf';
-			cmd = '1Nt1Nc';
-			break;
-		case 'ps2':
-			cmd = '4Nf';
-			cmd = '1Nt1Nc';
-			break;
-		case 'ps3':
-			cmd = '5Nf';
-			cmd = '1Nt1Nc';
-			break;
-		case 'ps4':
-			cmd = '6Nf';
+
+		case 'ps':
+			cmd = action.options.preset + 'Nf';
 			cmd = '1Nt1Nc';
 			break;
 
-		
 
 	}
 	if (self.config.prot == 'tcp') {
