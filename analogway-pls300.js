@@ -169,7 +169,7 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'Take',
-				size: '24',
+				size: '18',
 				color: '16777215',
 				bgcolor: self.rgb(0,255,0)
 			},
@@ -185,14 +185,17 @@ instance.prototype.init_presets = function () {
 			label: 'No Input',
 			bank: {
 				style: 'text',
-				text: 'Black/LOGO',
-				size: '24',
+				text: 'Black\\nLOGO',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in0',
+					action: 'in',
+					options: {
+						input: 0
+					}
 				}
 			]
 		});
@@ -203,13 +206,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'In 1',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in1',
+					action: 'in',
+					options: {
+						input: 1
+					}
 				}
 			]
 		});
@@ -220,13 +226,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'In 2',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in2',
+					action: 'in',
+					options: {
+						input: 2
+					}
 				}
 			]
 		});
@@ -237,13 +246,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'In 3',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in3',
+					action: 'in',
+					options: {
+						input: 3
+					}
 				}
 			]
 		});
@@ -254,13 +266,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'In 4',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in4',
+					action: 'in',
+					options: {
+						input: 4
+					}
 				}
 			]
 		});
@@ -271,13 +286,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'In 5',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in5',
+					action: 'in',
+					options: {
+						input: 5
+					}
 				}
 			]
 		});
@@ -288,13 +306,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'In 6',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in6',
+					action: 'in',
+					options: {
+						input: 6
+					}
 				}
 			]
 		});
@@ -305,13 +326,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'DVI 1',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in7',
+					action: 'in',
+					options: {
+						input: 9
+					}
 				}
 			]
 		});
@@ -322,13 +346,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'DVI 2',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in8',
+					action: 'in',
+					options: {
+						input: 10
+					}
 				}
 			]
 		});
@@ -339,13 +366,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'SDI 1',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in9',
+					action: 'in',
+					options: {
+						input: 11
+					}
 				}
 			]
 		});
@@ -356,13 +386,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'SDI 2',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,153,204)
 			},
 			actions: [
 				{
-					action: 'in10',
+					action: 'in',
+					options: {
+						input: 12
+					}
 				}
 			]
 		});
@@ -373,13 +406,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'No\\nFrame',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(88,88,58)
 			},
 			actions: [
 				{
-					action: 'fr0',
+					action: 'fr',
+					options: {
+						frame: 0
+					}
 				}
 			]
 		});
@@ -390,13 +426,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'Fr 1',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(88,88,58)
 			},
 			actions: [
 				{
-					action: 'fr1',
+					action: 'fr',
+					options: {
+						frame: 1
+					}
 				}
 			]
 		});
@@ -407,13 +446,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'Fr 2',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(88,88,58)
 			},
 			actions: [
 				{
-					action: 'fr2',
+					action: 'fr',
+					options: {
+						frame: 2
+					}
 				}
 			]
 		});
@@ -424,13 +466,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'Fr 3',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(88,88,58)
 			},
 			actions: [
 				{
-					action: 'fr3',
+					action: 'fr',
+					options: {
+						frame: 3
+					}
 				}
 			]
 		});
@@ -441,13 +486,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'Fr 4',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(88,88,58)
 			},
 			actions: [
 				{
-					action: 'fr4',
+					action: 'fr',
+					options: {
+						frame: 4
+					}
 				}
 			]
 		});
@@ -458,13 +506,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'Fr 5',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(88,88,58)
 			},
 			actions: [
 				{
-					action: 'fr5',
+					action: 'fr',
+					options: {
+						frame: 5
+					}
 				}
 			]
 		});
@@ -475,13 +526,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'Fr 6',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(88,88,58)
 			},
 			actions: [
 				{
-					action: 'fr6',
+					action: 'fr',
+					options: {
+						frame: 6
+					}
 				}
 			]
 		});
@@ -492,13 +546,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'Preset\\n1',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(153,153,102)
 			},
 			actions: [
 				{
-					action: 'ps1',
+					action: 'ps',
+					options: {
+						preset: 3
+					}
 				}
 			]
 		});
@@ -509,29 +566,36 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'Preset\\n2',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(153,153,102)
 			},
 			actions: [
 				{
-					action: 'ps2',
+					action: 'ps',
+					options: {
+						preset: 4
+					}
 				}
 			]
 		});
+
 		presets.push({
 			category: 'Presets',
 			label: 'Preset 3',
 			bank: {
 				style: 'text',
 				text: 'Preset\\n3',
-				size: '24',
+				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(153,153,102
+				bgcolor: self.rgb(153,153,102)
 			},
 			actions: [
 				{
-					action: 'ps3',
+					action: 'ps',
+					options: {
+						preset: 5
+					}
 				}
 			]
 		});
@@ -542,13 +606,16 @@ instance.prototype.init_presets = function () {
 			bank: {
 				style: 'text',
 				text: 'Preset\\n4',
-				size: '24',
+				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(153,153,102)
 			},
 			actions: [
 				{
-					action: 'ps4',
+					action: 'ps',
+					options: {
+						preset: 6
+					}
 				}
 			]
 		});
@@ -560,11 +627,12 @@ instance.prototype.actions = function(system) {
 	var self = this;
 
 	self.system.emit('instance_actions', self.id, {
-		'take':    { 
-			label: 'Take' 
+		'take': {
+			label: 'Take'
 		 },
-		'in':      { 
-			label: 'Input' 
+
+		'in': {
+			label: 'Input',
 			options: [{
 				type:   'dropdown',
 				label:  'Input',
@@ -581,10 +649,13 @@ instance.prototype.actions = function(system) {
 					{ id: '9', label: 'DVI 1' },
 					{ id: '10', label: 'DVI 2' },
 					{ id: '11', label: 'SDI 1' },
-					{ id: '12', label: 'SDI 2' },
-				}]},
-		'fr':      { 
-			label: 'Background Frame' 
+					{ id: '12', label: 'SDI 2' }
+				]
+			}]
+		},
+
+		'fr':      {
+			label: 'Background Frame',
 			options: [{
 				type:   'dropdown',
 				label:  'Frame',
@@ -597,26 +668,25 @@ instance.prototype.actions = function(system) {
 					{ id: '3', label: 'Frame 3' },
 					{ id: '4', label: 'Frame 4' },
 					{ id: '5', label: 'Frame 5' },
-					{ id: '6', label: 'Frame 6' },
-
-				}]},
-		'ps':      { 
-			label: 'Preset' 
+					{ id: '6', label: 'Frame 6' }
+				]
+			}]
+		},
+		'ps':      {
+			label: 'User Preset',
 			options: [{
 				type:   'dropdown',
 				label:  'Preset',
 				id:     'preset',
-				default: '0',
+				default: '3',
 				choices: [
-
 					{ id: '3', label: 'Preset 1' },
 					{ id: '4', label: 'Preset 2' },
 					{ id: '5', label: 'Preset 3' },
-					{ id: '6', label: 'Preset 4' },
-
-				}]},
-
-		
+					{ id: '6', label: 'Preset 4' }
+				]
+			}]
+		}
 	});
 };
 
@@ -625,23 +695,22 @@ instance.prototype.action = function(action) {
 	var cmd
 	var opt = action.options
 
-	switch(action.action){
+	switch(action.action) {
 
 		case 'take':
 			cmd = 'TK1';
 			break;
 
 		case 'in':
-			cmd = '1,2,' + action.options.input + 'IN';
+			cmd = '1,2,' + opt.input + 'IN';
 			break;
 
 		case 'fr':
-			cmd = '1,0,' + action.options.frame + 'IN';
+			cmd = '1,0,' + opt.frame + 'IN';
 			break;
 
 		case 'ps':
-			cmd = action.options.preset + 'Nf';
-			cmd = '1Nt1Nc';
+			cmd = '' + opt.preset + 'Nf1Nt1Nc';
 			break;
 
 
@@ -673,11 +742,10 @@ instance.prototype.action = function(action) {
 };
 
 
-
 instance.module_info = {
 	label: 'Analog Way Pulse 300',
-	id: 'pulse300',
-	version: '1.2.0'
+	id: 'analogway-pls300',
+	version: '1.2.0.1'
 };
 
 instance_skel.extendedBy(instance);

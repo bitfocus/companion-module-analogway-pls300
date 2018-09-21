@@ -1,8 +1,8 @@
 {
-  "name": "pulse300",
-  "version": "1.0.0",
+  "name": "analogway-pls300",
+  "version": "1.0.1",
   "description": "Analog Way Pulse 300 plugin for Companion",
-  "main": "pulse300",
+  "main": "analogway-pls300.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
