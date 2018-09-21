@@ -745,7 +745,7 @@ instance.prototype.action = function(action) {
 instance.module_info = {
 	label: 'Analog Way Pulse 300',
 	id: 'analogway-pls300',
-	version: '1.2.0.1'
+	version: '1.2.0.2'
 };
 
 instance_skel.extendedBy(instance);
