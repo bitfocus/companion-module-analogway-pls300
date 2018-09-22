@@ -710,7 +710,7 @@ instance.prototype.action = function(action) {
 			break;
 
 		case 'ps':
-			cmd = '' + opt.preset + 'Nf \n 1Nt1Nc';
+			cmd = '' + opt.preset + 'Nf \r\n 1Nt1Nc';
 			break;
 
 
