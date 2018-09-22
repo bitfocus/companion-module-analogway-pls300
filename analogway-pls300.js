@@ -710,7 +710,7 @@ instance.prototype.action = function(action) {
 			break;
 
 		case 'ps':
-			cmd = '' + opt.preset + 'Nf1Nt1Nc';
+			cmd = '' + opt.preset + 'Nf \n 1Nt1Nc';
 			break;
 
 
@@ -745,7 +745,7 @@ instance.prototype.action = function(action) {
 instance.module_info = {
 	label: 'Analog Way Pulse 300',
 	id: 'analogway-pls300',
-	version: '1.2.0.2'
+	version: '1.2.0.3'
 };
 
 instance_skel.extendedBy(instance);
