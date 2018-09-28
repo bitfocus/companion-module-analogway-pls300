@@ -698,19 +698,19 @@ instance.prototype.action = function(action) {
 	switch(action.action) {
 
 		case 'take':
-			cmd = 'TK1';
+			cmd = '1TK \r\n 1TK';
 			break;
 
 		case 'in':
-			cmd = '1,2,' + opt.input + 'IN';
+			cmd = '1,2,' + opt.input + 'IN' + '\r\n' + '1,2,' + opt.input + 'IN' ;
 			break;
 
 		case 'fr':
-			cmd = '1,0,' + opt.frame + 'IN';
+			cmd = '1,0,' + opt.frame + 'IN' + '\r\n' + '1,0,' + opt.frame + 'IN';
 			break;
 
 		case 'ps':
-			cmd = '' + opt.preset + 'Nf \r\n 1Nt1Nc';
+			cmd = '' + opt.preset + 'Nf \r\n 1Nt1Nc' + '\r\n' + '' + opt.preset + 'Nf \r\n 1Nt1Nc';
 			break;
 
 
@@ -745,7 +745,7 @@ instance.prototype.action = function(action) {
 instance.module_info = {
 	label: 'Analog Way Pulse 300',
 	id: 'analogway-pls300',
-	version: '1.2.0.3'
+	version: '1.2.0.4'
 };
 
 instance_skel.extendedBy(instance);
