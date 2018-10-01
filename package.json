@@ -1,6 +1,11 @@
 {
   "name": "analogway-pls300",
   "version": "1.0.1",
+	"api_version": "1.0.0",
+	"keywords": [ "Image Processing" ],
+	"manufacturer": "Analog Way",
+	"product": "PLS 300",
+	"shortname": "pulse",
   "description": "Analog Way Pulse 300 plugin for Companion",
   "main": "analogway-pls300.js",
   "scripts": {
