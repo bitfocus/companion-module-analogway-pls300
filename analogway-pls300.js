@@ -171,7 +171,7 @@ instance.prototype.init_presets = function () {
 				text: 'Take',
 				size: '18',
 				color: '16777215',
-				bgcolor: self.rgb(0,255,0)
+				bgcolor: self.rgb(0,204,0)
 			},
 			actions: [
 				{
@@ -188,7 +188,7 @@ instance.prototype.init_presets = function () {
 				text: 'Black\\nLOGO',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -208,7 +208,7 @@ instance.prototype.init_presets = function () {
 				text: 'In 1',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -228,7 +228,7 @@ instance.prototype.init_presets = function () {
 				text: 'In 2',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -248,7 +248,7 @@ instance.prototype.init_presets = function () {
 				text: 'In 3',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -268,7 +268,7 @@ instance.prototype.init_presets = function () {
 				text: 'In 4',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -288,7 +288,7 @@ instance.prototype.init_presets = function () {
 				text: 'In 5',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -308,7 +308,7 @@ instance.prototype.init_presets = function () {
 				text: 'In 6',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -328,7 +328,7 @@ instance.prototype.init_presets = function () {
 				text: 'DVI 1',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -348,7 +348,7 @@ instance.prototype.init_presets = function () {
 				text: 'DVI 2',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -368,7 +368,7 @@ instance.prototype.init_presets = function () {
 				text: 'SDI 1',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -388,7 +388,7 @@ instance.prototype.init_presets = function () {
 				text: 'SDI 2',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -408,7 +408,7 @@ instance.prototype.init_presets = function () {
 				text: 'No\\nFrame',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -428,7 +428,7 @@ instance.prototype.init_presets = function () {
 				text: 'Fr 1',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -448,7 +448,7 @@ instance.prototype.init_presets = function () {
 				text: 'Fr 2',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -468,7 +468,7 @@ instance.prototype.init_presets = function () {
 				text: 'Fr 3',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -488,7 +488,7 @@ instance.prototype.init_presets = function () {
 				text: 'Fr 4',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -508,7 +508,7 @@ instance.prototype.init_presets = function () {
 				text: 'Fr 5',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -528,7 +528,7 @@ instance.prototype.init_presets = function () {
 				text: 'Fr 6',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -548,7 +548,7 @@ instance.prototype.init_presets = function () {
 				text: 'Preset\\n1',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(153,153,102)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -568,7 +568,7 @@ instance.prototype.init_presets = function () {
 				text: 'Preset\\n2',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(153,153,102)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -588,7 +588,7 @@ instance.prototype.init_presets = function () {
 				text: 'Preset\\n3',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(153,153,102)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
@@ -608,7 +608,7 @@ instance.prototype.init_presets = function () {
 				text: 'Preset\\n4',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(153,153,102)
+				bgcolor: self.rgb(0,0,0)
 			},
 			actions: [
 				{
