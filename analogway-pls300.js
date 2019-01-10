@@ -33,9 +33,11 @@ instance.prototype.updateConfig = function(config) {
 	}
 
 	self.config = config;
+
 	if (self.config.prot == 'tcp') {
 		self.init_tcp();
 	};
+
 	if (self.config.prot == 'udp') {
 		self.init_udp();
 	};
@@ -152,6 +154,7 @@ instance.prototype.destroy = function() {
 	if (self.socket !== undefined) {
 		self.socket.destroy();
 	}
+
 	if (self.udp !== undefined) {
 		self.udp.destroy();
 	}
@@ -159,33 +162,65 @@ instance.prototype.destroy = function() {
 	debug("destroy", self.id);;
 };
 
+instance.prototype.CHOICES_INPUTS = [
+	{ id: '0',  label: 'No Input', text: 'Black\\nLOGO' },
+	{ id: '1',  label: 'Input 1',  text: 'In 1' },
+	{ id: '2',  label: 'Input 2',  text: 'In 2' },
+	{ id: '3',  label: 'Input 3',  text: 'In 3' },
+	{ id: '4',  label: 'Input 4',  text: 'In 4' },
+	{ id: '5',  label: 'Input 5',  text: 'In 5' },
+	{ id: '6',  label: 'Input 6',  text: 'In 6' },
+	{ id: '9',  label: 'DVI 1',    text: 'DVI 1' },
+	{ id: '10', label: 'DVI 2',    text: 'DVI 2' },
+	{ id: '11', label: 'SDI 1',    text: 'DVI 3' },
+	{ id: '12', label: 'SDI 2',    text: 'DVI 4' }
+];
+
+instance.prototype.CHOICES_FRAMES = [
+	{ id: '0', label: 'No Frame', text: 'No\\nFrame' },
+	{ id: '1', label: 'Frame 1',  text: 'Fr 1' },
+	{ id: '2', label: 'Frame 2',  text: 'Fr 2' },
+	{ id: '3', label: 'Frame 3',  text: 'Fr 3' },
+	{ id: '4', label: 'Frame 4',  text: 'Fr 4' },
+	{ id: '5', label: 'Frame 5',  text: 'Fr 5' },
+	{ id: '6', label: 'Frame 6',  text: 'Fr 6' }
+];
+
+instance.prototype.CHOICES_PRESETS = [
+	{ id: '3', label: 'Preset 1', text: 'Preset\\n1' },
+	{ id: '4', label: 'Preset 2', text: 'Preset\\n2' },
+	{ id: '5', label: 'Preset 3', text: 'Preset\\n3' },
+	{ id: '6', label: 'Preset 4', text: 'Preset\\n4' }
+];
+
 instance.prototype.init_presets = function () {
 	var self = this;
 	var presets = [];
 
-		presets.push({
-			category: 'Program',
-			label: 'Take',
-			bank: {
-				style: 'text',
-				text: 'Take',
-				size: '18',
-				color: '16777215',
-				bgcolor: self.rgb(0,204,0)
-			},
-			actions: [
-				{
-					action: 'take',
-				}
-			]
-		});
+	presets.push({
+		category: 'Program',
+		label: 'Take',
+		bank: {
+			style: 'text',
+			text: 'Take',
+			size: '18',
+			color: '16777215',
+			bgcolor: self.rgb(0,204,0)
+		},
+		actions: [
+			{
+				action: 'take',
+			}
+		]
+	});
 
+	for (var input in self.CHOICES_INPUTS) {
 		presets.push({
 			category: 'Inputs',
-			label: 'No Input',
+			label: self.CHOICES_INPUTS[input].label,
 			bank: {
 				style: 'text',
-				text: 'Black\\nLOGO',
+				text: self.CHOICES_INPUTS[input].text,
 				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,0,0)
@@ -194,218 +229,20 @@ instance.prototype.init_presets = function () {
 				{
 					action: 'in',
 					options: {
-						input: 0
+						input: self.CHOICES_INPUTS[input].id
 					}
 				}
 			]
 		});
+	}
 
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 1',
-			bank: {
-				style: 'text',
-				text: 'In 1',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 1
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 2',
-			bank: {
-				style: 'text',
-				text: 'In 2',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 2
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 3',
-			bank: {
-				style: 'text',
-				text: 'In 3',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 3
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 4',
-			bank: {
-				style: 'text',
-				text: 'In 4',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 4
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 5',
-			bank: {
-				style: 'text',
-				text: 'In 5',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 5
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 6',
-			bank: {
-				style: 'text',
-				text: 'In 6',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 6
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Inputs',
-			label: 'DVI 1',
-			bank: {
-				style: 'text',
-				text: 'DVI 1',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 9
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Inputs',
-			label: 'DVI 2',
-			bank: {
-				style: 'text',
-				text: 'DVI 2',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 10
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Inputs',
-			label: 'SDI 1',
-			bank: {
-				style: 'text',
-				text: 'SDI 1',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 11
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Inputs',
-			label: 'SDI 2',
-			bank: {
-				style: 'text',
-				text: 'SDI 2',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 12
-					}
-				}
-			]
-		});
-
+	for (var frame in self.CHOICES_FRAMES) {
 		presets.push({
 			category: 'Frames',
-			label: 'No Frame',
+			label: self.CHOICES_FRAMES[frame].label,
 			bank: {
 				style: 'text',
-				text: 'No\\nFrame',
+				text: self.CHOICES_FRAMES[frame].text,
 				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,0,0)
@@ -414,138 +251,20 @@ instance.prototype.init_presets = function () {
 				{
 					action: 'fr',
 					options: {
-						frame: 0
+						frame: self.CHOICES_FRAMES[frame].id
 					}
 				}
 			]
 		});
+	}
 
+	for (var preset in self.CHOICES_PRESETS) {
 		presets.push({
 			category: 'Frames',
-			label: 'Frame 1',
+			label: self.CHOICES_PRESETS[preset].label,
 			bank: {
 				style: 'text',
-				text: 'Fr 1',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 1
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 2',
-			bank: {
-				style: 'text',
-				text: 'Fr 2',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 2
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 3',
-			bank: {
-				style: 'text',
-				text: 'Fr 3',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 3
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 4',
-			bank: {
-				style: 'text',
-				text: 'Fr 4',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 4
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 5',
-			bank: {
-				style: 'text',
-				text: 'Fr 5',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 5
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 6',
-			bank: {
-				style: 'text',
-				text: 'Fr 6',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 6
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Presets',
-			label: 'Preset 1',
-			bank: {
-				style: 'text',
-				text: 'Preset\\n1',
+				text: self.CHOICES_PRESETS[preset].text,
 				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0,0,0)
@@ -554,71 +273,12 @@ instance.prototype.init_presets = function () {
 				{
 					action: 'ps',
 					options: {
-						preset: 3
+						preset: self.CHOICES_PRESETS[preset].id
 					}
 				}
 			]
 		});
-
-		presets.push({
-			category: 'Presets',
-			label: 'Preset 2',
-			bank: {
-				style: 'text',
-				text: 'Preset\\n2',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'ps',
-					options: {
-						preset: 4
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Presets',
-			label: 'Preset 3',
-			bank: {
-				style: 'text',
-				text: 'Preset\\n3',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'ps',
-					options: {
-						preset: 5
-					}
-				}
-			]
-		});
-
-		presets.push({
-			category: 'Presets',
-			label: 'Preset 4',
-			bank: {
-				style: 'text',
-				text: 'Preset\\n4',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,0,0)
-			},
-			actions: [
-				{
-					action: 'ps',
-					options: {
-						preset: 6
-					}
-				}
-			]
-		});
+	}
 
 	self.setPresetDefinitions(presets);
 }
@@ -638,19 +298,7 @@ instance.prototype.actions = function(system) {
 				label:  'Input',
 				id:     'input',
 				default: '0',
-				choices: [
-					{ id: '0', label: 'No Input' },
-					{ id: '1', label: 'Input 1' },
-					{ id: '2', label: 'Input 2' },
-					{ id: '3', label: 'Input 3' },
-					{ id: '4', label: 'Input 4' },
-					{ id: '5', label: 'Input 5' },
-					{ id: '6', label: 'Input 6' },
-					{ id: '9', label: 'DVI 1' },
-					{ id: '10', label: 'DVI 2' },
-					{ id: '11', label: 'SDI 1' },
-					{ id: '12', label: 'SDI 2' }
-				]
+				choices: self.CHOICES_INPUTS
 			}]
 		},
 
@@ -661,15 +309,7 @@ instance.prototype.actions = function(system) {
 				label:  'Frame',
 				id:     'frame',
 				default: '0',
-				choices: [
-					{ id: '0', label: 'No Frame' },
-					{ id: '1', label: 'Frame 1' },
-					{ id: '2', label: 'Frame 2' },
-					{ id: '3', label: 'Frame 3' },
-					{ id: '4', label: 'Frame 4' },
-					{ id: '5', label: 'Frame 5' },
-					{ id: '6', label: 'Frame 6' }
-				]
+				choices: self.CHOICES_FRAMES
 			}]
 		},
 		'ps':      {
@@ -679,16 +319,11 @@ instance.prototype.actions = function(system) {
 				label:  'Preset',
 				id:     'preset',
 				default: '3',
-				choices: [
-					{ id: '3', label: 'Preset 1' },
-					{ id: '4', label: 'Preset 2' },
-					{ id: '5', label: 'Preset 3' },
-					{ id: '6', label: 'Preset 4' }
-				]
+				choices: self.CHOICES_PRESETS
 			}]
 		}
 	});
-};
+}
 
 instance.prototype.action = function(action) {
 	var self = this;
@@ -712,21 +347,23 @@ instance.prototype.action = function(action) {
 		case 'ps':
 			cmd = '' + opt.preset + 'Nf \r\n 1Nt1Nc' + '\r\n' + '' + opt.preset + 'Nf \r\n 1Nt1Nc';
 			break;
-
-
 	}
+
 	if (self.config.prot == 'tcp') {
+
 		if (cmd !== undefined) {
 
 			debug('sending ',cmd,"to",self.config.host);
 
 			if (self.socket !== undefined && self.socket.connected) {
 				self.socket.send(cmd);
-			} else {
+			}
+			else {
 				debug('Socket not connected :(');
 			}
 		}
-	};
+	}
+
 	if (self.config.prot == 'udp') {
 
 		if (cmd !== undefined ) {
@@ -737,9 +374,8 @@ instance.prototype.action = function(action) {
 				self.udp.send(cmd);
 			}
 		}
-	};
-
-};
+	}
+}
 
 instance_skel.extendedBy(instance);
 exports = module.exports = instance;
