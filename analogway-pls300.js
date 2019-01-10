@@ -172,8 +172,8 @@ instance.prototype.CHOICES_INPUTS = [
 	{ id: '6',  label: 'Input 6',  text: 'In 6' },
 	{ id: '9',  label: 'DVI 1',    text: 'DVI 1' },
 	{ id: '10', label: 'DVI 2',    text: 'DVI 2' },
-	{ id: '11', label: 'SDI 1',    text: 'DVI 3' },
-	{ id: '12', label: 'SDI 2',    text: 'DVI 4' }
+	{ id: '11', label: 'SDI 1',    text: 'SDI 1' },
+	{ id: '12', label: 'SDI 2',    text: 'SDI 2' }
 ];
 
 instance.prototype.CHOICES_FRAMES = [
@@ -260,7 +260,7 @@ instance.prototype.init_presets = function () {
 
 	for (var preset in self.CHOICES_PRESETS) {
 		presets.push({
-			category: 'Frames',
+			category: 'Presets',
 			label: self.CHOICES_PRESETS[preset].label,
 			bank: {
 				style: 'text',
