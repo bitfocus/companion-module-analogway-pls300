@@ -1,8 +1,10 @@
 {
 	"name": "analogway-pls300",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"api_version": "1.0.0",
-	"keywords": [ "Image Processing" ],
+	"keywords": [
+		"Image Processing"
+	],
 	"manufacturer": "Analog Way",
 	"product": "PLS 300",
 	"shortname": "pulse",
