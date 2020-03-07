@@ -15,6 +15,8 @@ function instance(system, id, config) {
 	self.actions(); // export actions
 	self.init_presets();
 
+	self.frozen = false;
+
 	return self;
 }
 
@@ -176,6 +178,11 @@ instance.prototype.CHOICES_INPUTS = [
 	{ id: '12', label: 'SDI 2',    text: 'SDI 2' }
 ];
 
+instance.prototype.CHOICES_LAYERS = [
+	{ id: '2',  label: 'BG Live', text: 'Bkgnd Live' },
+	{ id: '3',  label: 'PiP 1 (BG Live 2 in Matrix)',  text: 'PiP 1/BG Live 2' }
+];
+
 instance.prototype.CHOICES_FRAMES = [
 	{ id: '0', label: 'No Frame', text: 'No\\nFrame' },
 	{ id: '1', label: 'Frame 1',  text: 'Fr 1' },
@@ -214,6 +221,23 @@ instance.prototype.init_presets = function () {
 		]
 	});
 
+	presets.push({
+		category: 'Program',
+		label: 'Freeze (All Inputs)',
+		bank: {
+			style: 'text',
+			text: 'Freeze (All Inputs)',
+			size: '18',
+			color: '16777215',
+			bgcolor: self.rgb(0,204,0)
+		},
+		actions: [
+			{
+				action: 'freeze',
+			}
+		]
+	});
+
 	for (var input in self.CHOICES_INPUTS) {
 		presets.push({
 			category: 'Inputs',
@@ -230,6 +254,28 @@ instance.prototype.init_presets = function () {
 					action: 'in',
 					options: {
 						input: self.CHOICES_INPUTS[input].id
+					}
+				}
+			]
+		});
+	}
+
+	for (var layer in self.CHOICES_LAYERS) {
+		presets.push({
+			category: 'Inputs',
+			label: self.CHOICES_LAYERS[layer].label,
+			bank: {
+				style: 'text',
+				text: self.CHOICES_INPUTS[layer].text,
+				size: '14',
+				color: '16777215',
+				bgcolor: self.rgb(0,0,0)
+			},
+			actions: [
+				{
+					action: 'layer',
+					options: {
+						input: self.CHOICES_LAYERS[layer].id
 					}
 				}
 			]
@@ -291,9 +337,20 @@ instance.prototype.actions = function(system) {
 			label: 'Take'
 		 },
 
+		 'freeze': {
+ 			label: 'Freeze (All Inputs)'
+ 		 },
+
 		'in': {
 			label: 'Input',
 			options: [{
+				type: 		'dropdown',
+				label: 		'Layer',
+				id:				'layer',
+				default:	'2',
+				choices:	self.CHOICES_LAYERS
+			},
+			{
 				type:   'dropdown',
 				label:  'Input',
 				id:     'input',
@@ -301,6 +358,7 @@ instance.prototype.actions = function(system) {
 				choices: self.CHOICES_INPUTS
 			}]
 		},
+
 
 		'fr':      {
 			label: 'Background Frame',
@@ -330,14 +388,34 @@ instance.prototype.action = function(action) {
 	var cmd
 	var opt = action.options
 
+
 	switch(action.action) {
 
 		case 'take':
 			cmd = '1TK \r\n 1TK';
 			break;
 
+		case 'freeze':
+		cmd = '';
+			if(self.frozen == false){
+				for (var choice of self.CHOICES_INPUTS){
+					var id = choice.id;
+					cmd += id+',1Sf \r\n '+id+',1Sf \r\n';
+				}
+				self.frozen = true;
+			}
+			else {
+				for (var choice of self.CHOICES_INPUTS){
+					var id = choice.id;
+					cmd += id+',0Sf \r\n '+id+',0Sf \r\n';
+				}
+				self.frozen = false;
+			}
+
+			break;
+
 		case 'in':
-			cmd = '1,2,' + opt.input + 'IN' + '\r\n' + '1,2,' + opt.input + 'IN' ;
+			cmd = '1,' + opt.layer + ',' + opt.input + 'IN' + '\r\n' + '1,' + opt.layer + ',' + opt.input + 'IN' ;
 			break;
 
 		case 'fr':
